@@ -1,0 +1,11 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gmc3_backend
+    ports:
+      - "4000:3000"
+    env_file:
+      - .env
+    restart: always
