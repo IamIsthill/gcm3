@@ -41,7 +41,7 @@ function App() {
 
   return (
     <>
-      <div className="mt-10 mx-5 md:mx-5 md:mt-10 grid gap-10 sm:gap-8">
+      <div className="my-10 mx-5 md:mx-5 md:mt-10 grid gap-10 sm:gap-8">
         <div className="grid gap-6 sm:gap-8">
           {questions.map((question, index) => (
             <QuestionCard
@@ -58,7 +58,7 @@ function App() {
 
         <div className="flex sm:justify-start">
           <button
-            className={`text-white font-medium px-6 py-2 rounded-lg transition-colors ${
+            className={`text-white font-medium px-4 text-lg py-2 rounded-lg transition-colors ${
               loading
                 ? "bg-gray-300 cursor-not-allowed"
                 : "bg-gray-500 cursor-pointer"
