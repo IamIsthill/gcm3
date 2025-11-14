@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
+
+interface ISaveAnswer {
+  Q1: string | null;
+  Q2: string | null;
+  Q3: string | null;
+}
 
 export function useSaveAnswer() {
   const [loading, setLoading] = useState(false);
 
-  async function saveAnswer(payload: {
-    Q1: string | null;
-    Q2: string | null;
-    Q3: string | null;
-  }) {
+  // Ensure we have one instance of the function across rerenders
+  const saveAnswer = useCallback(async (payload: ISaveAnswer) => {
     try {
       setLoading(true);
 
@@ -25,7 +28,7 @@ export function useSaveAnswer() {
     } finally {
       setLoading(false);
     }
-  }
+  }, []);
 
   return { loading, saveAnswer };
 }

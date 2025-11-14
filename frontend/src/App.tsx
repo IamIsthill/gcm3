@@ -17,8 +17,8 @@ function App() {
   });
   const { loading, saveAnswer } = useSaveAnswer();
 
-  const setAnswer = (question: string, answer: string) => {
-    const questionString = `Q${question}`;
+  const setAnswer = (questionNumber: string, answer: string) => {
+    const questionString = `Q${questionNumber}`;
     setSubmitted((prev) => ({ ...prev, [questionString]: answer }));
   };
 
